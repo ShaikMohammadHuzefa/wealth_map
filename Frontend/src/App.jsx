@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import ProtectedRoute from "./ProtectedRoute";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 
 const isAuthenticated = () => {
     return sessionStorage.getItem("currUser"); // Check if user is logged in
