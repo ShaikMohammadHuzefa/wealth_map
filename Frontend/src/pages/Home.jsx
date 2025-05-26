@@ -1,6 +1,6 @@
 import React from 'react'
-import Feed from '../components/feed'
-import Navbar from '../components/navbar'
+import Feed from '../components/Feed'
+import Navbar from '../components/Navbar'
 import Box from '@mui/material/Box';
 import { SearchProvider } from '../context/SearchProvider'; 
 
