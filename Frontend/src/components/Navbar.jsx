@@ -74,7 +74,7 @@ export default function NavBar() {
   };
       const handleLogout = async () => {
     try {
-        const response = await fetch("http://localhost:3000/logout", { 
+        const response = await fetch("https://wealth-map-backend.onrender.com/logout", { 
             method: "GET", 
             credentials: "include" 
         });
