@@ -8,7 +8,7 @@ const Signup = () => {
 
     const handleSignup = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:3000/signup", {
+        const response = await fetch("https://wealth-map-backend.onrender.com/signup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user),
