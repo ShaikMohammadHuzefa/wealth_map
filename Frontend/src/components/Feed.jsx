@@ -1,5 +1,8 @@
 
 // Feed.jsx
+import L from "leaflet";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import React, { useContext, useEffect, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import Box from "@mui/material/Box";
@@ -22,6 +25,14 @@ function parsePrice(priceString) {
 
 const drawerWidth = 280;
 
+const DefaultIcon = L.icon({
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 
 const Feed = () => {
@@ -176,13 +187,14 @@ const Feed = () => {
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {/* Marker for current searched position */}
-          <Marker position={position} />
+          <Marker position={position} icon={DefaultIcon}/>
           <MapClickHandler />
           {/* Markers for properties that fall within the price filter */}
           {filteredProperties.map((property, index) => (
             <Marker
               key={index}
               position={[property.latitude, property.longitude]}
+              icon={DefaultIcon}
               eventHandlers={{
                 click: () => setSelectedProperty(property),
               }}
