@@ -181,7 +181,7 @@ const Feed = () => {
         <MapContainer
           center={position}
           key={position.toString()}
-          zoom={4}
+          zoom={11}
           scrollWheelZoom={true}
           style={{ height: "100%" }}
         >
