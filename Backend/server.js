@@ -71,7 +71,7 @@ app.use((req,res,next) => {
 }; */
 // Enable CORS
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow only your frontend
+    origin: 'https://wealth-map-frontend.onrender.com', // Allow only your frontend
     credentials: true // Enable cookies and authentication headers
 }));
 
